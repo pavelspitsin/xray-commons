@@ -95,10 +95,10 @@ Bind factory has a different provides for a binding types:
 
 | Type | Usage | Description | Destruction | Custom arguments |
 | - | - | - | - | - |
-| BindFactorySingletonProvider | g_factory.bind<IWeapon>().asSingleton<Rifle>() | Only one instance of the type will be created, and the same instance will be returned for each request. | Only when unbind() will be called | Arguments will be passed once when constructor of class  will be called. |
-| BindFactoryInstanceProvider | g_factory.bind<IWeapon>().asSingleton(new Rifle()) | Instance that passed to argument will be returned for each request. | Never. User is responsible of destruction of instance. | No |
-| BindFactoryThreadSingletonProvider | g_factory.bind<IWeapon>().asThreadSingleton<Rifle>() | Only one instance of the type will be created per thread. | Destructor will be called when thread is destroyed. | Arguments will be passed once per thread when constructor of class will be called. |
-| BindFactoryTransientProvider | g_factory.bind<IWeapon>().asTransient<Rifle>() | New instance of the type will be created per request. | Pointer destruction is user controller. Use getShared() for automatic instance desctructions. | Arguments will be passed each time when constructor of class will be called. |
+| Singleton | g_factory.bind<IWeapon>().asSingleton<Rifle>() | Only one instance of the type will be created, and the same instance will be returned for each request. | Only when unbind() will be called | Arguments will be passed once when constructor of class  will be called. |
+| Instance | g_factory.bind<IWeapon>().asSingleton(new Rifle()) | Instance that passed to argument will be returned for each request. | Never. User is responsible of destruction of instance. | No |
+| Thread | g_factory.bind<IWeapon>().asThreadSingleton<Rifle>() | Only one instance of the type will be created per thread. | Destructor will be called when thread is destroyed. | Arguments will be passed once per thread when constructor of class will be called. |
+| Transient | g_factory.bind<IWeapon>().asTransient<Rifle>() | New instance of the type will be created per request. | Pointer destruction is user controller. Use getShared() for automatic instance desctructions. | Arguments will be passed each time when constructor of class will be called. |
 | Custom | g_factory.bind<IWeapon>().asProvider() | User manage creation of instances for requests. |User manage destruction of instance. | Custom arguments completely user controlled. |
 
 ### Custom providers
