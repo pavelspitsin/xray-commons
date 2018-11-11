@@ -143,7 +143,7 @@ private:
 int main()
 {
     // Bind interface to implementation with one custom argument
-    g_factory.bind<IWeapon>()->asSingleton<Rifle, int>();
+    g_factory.bind<IWeapon>()->asSingleton<Rifle, unsigned int>();
 
     // Retrieve interface implementation instance with custom arguments
     IWeapon* weapon = g_factory.get<IWeapon>(15);
